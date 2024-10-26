@@ -12,21 +12,15 @@ This project aims to develop a scalable and highly maintainable platform, using 
 
 ## Prerequisites
 - Java JDK
-  - Install JDK 11 or higher. Discharge.
-- Maven
-  - Install Maven to manage dependencies. Installation guide.
-- IDE
-  -  Intellij IDEA (recommended)
-  -  Eclipse
-  -  NetBeans
-  -  Spring Tool Suite (STS) 
-- Database
-  - Configure a database (MySQL, PostgreSQL) and update application.properties.
+  - Install JDK 21 or higher. [Download JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html).
+- IDE's
+  -  [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/?section=windows#:~:text=free%20to%20use-,IntelliJ%20IDEA%20Community%20Edition,-The%20IDE%20for).
+  -  [Spring Tool Suite](https://spring.io/tools#:~:text=Spring%20Tools%204%20for%20Eclipse) 
 - Run the following command in the root of the project:
   - `mvn clean install`
 
 ## Installation
-### To download the Employer System source code, follow these steps:
+### To download the Employee System source code, follow these steps:
 ```sh
 # Clone the repository
 git clone https://github.com/Geraldow/empsys.git
@@ -38,7 +32,7 @@ mvn clean install
 mvn spring-boot:run
 
 # In the browser navigate to:
-http://localhost:8080/empsys
+http://localhost:1234/vacantes
 ```
 
 ## Project Structure
