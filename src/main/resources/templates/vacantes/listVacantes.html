@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+	<!-- Bootstrap core CSS -->
+	<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link th:href="@{bootstrap/css/jumbotron.css}" rel="stylesheet">
+	<link th:href="@{bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+</head>
+
+<body>
+
+	<header th:insert="fragments/menu :: menu-principal(vacantes)"></header>
+
+	<div style="width: 80%; margin: 72px auto">
+		<h1>Lista de Vacantes</h1>
+		<table class="table table-bordered" style="margin-top: 32px;">
+			<thead class="table-dark">
+				<tr>
+					<th>Nombre</th>
+					<th>Descripción</th>
+					<th>Fecha</th>
+				</tr>
+			</thead>
+			<tbody class="table-group-divider">
+				<tr class="table table-striped" th:each="vacante : ${vacantes}">
+					<td th:text="${vacante.nombre}"></td>
+					<td th:text="${vacante.descripcion}"></td>
+					<td th:text="${#dates.format(vacante.fecha, 'dd-MM-yyyy')}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/vacantes/create}" class="btn btn-primary">Registrar
+			vacante
+		</a>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+	<footer th:insert="fragments/footer :: pie-pagina"></footer>
+</body>
+
+</html>
