@@ -64,9 +64,9 @@ public class VacanteController {
     }
 
     @GetMapping("/view/{id}")
-    public String verDetalles(@PathVariable("id") int idVacante, Model model) {
+        public String verDetalles(@PathVariable("id") int idVacante, Model model) {
 
-        Vacante vacante = vacanteService.obtenerVacantePorId(idVacante);
+            Vacante vacante = vacanteService.obtenerVacantePorId(idVacante);
 
         System.out.println("Vacante: " + vacante.getId());
 
