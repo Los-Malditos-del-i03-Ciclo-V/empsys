@@ -11,59 +11,69 @@ public class VacanteFactory {
 
     public static List<Vacante> listaDeVacantes = new ArrayList<>();
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    static SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-    Vacante vacante1, vacante2, vacante3, vacante4;
-
-    {
+    public static void crearVacante(int id, String nombre, String descripcion, String fecha, double salario, int destacado, String imagen) {
         try {
-            vacante1 = Vacante.builder()
-                    .id(1)
-                    .nombre("Desarrollador Java")
-                    .descripcion("Desarrolla aplicaciones web y aplicaciones móviles en Java")
-                    .fecha(sdf.parse("08-02-2019"))
-                    .salario(15000.0)
-                    .destacado(1)
-                    .imagen("desarrollador_java.jpg")
+
+            Vacante vacante = Vacante.builder()
+                    .id(id)
+                    .nombre(nombre)
+                    .descripcion(descripcion)
+                    .fecha(sdf.parse(fecha))
+                    .salario(salario)
+                    .destacado(destacado)
+                    .imagen(imagen)
                     .build();
 
-            vacante2 = Vacante.builder()
-                    .id(2)
-                    .nombre("Desarrollador.NET")
-                    .descripcion("Desarrolla aplicaciones web y aplicaciones móviles en.NET")
-                    .fecha(sdf.parse("08-02-2019"))
-                    .salario(15000.0)
-                    .destacado(1)
-                    .imagen("desarrollador_net.jpg")
-                    .build();
-
-            vacante3 = Vacante.builder()
-                    .id(3)
-                    .nombre("Desarrollador PHP")
-                    .descripcion("Desarrolla aplicaciones web y aplicaciones móviles en PHP")
-                    .fecha(sdf.parse("08-02-2019"))
-                    .salario(15000.0)
-                    .destacado(1)
-                    .imagen("desarrollador_php.jpg")
-                    .build();
-
-            vacante4 = Vacante.builder()
-                    .id(4)
-                    .nombre("Desarrollador.NET")
-                    .descripcion("Desarrolla aplicaciones web y aplicaciones móviles en.NET")
-                    .fecha(sdf.parse("08-02-2019"))
-                    .salario(15000.0)
-                    .destacado(1)
-                    .imagen("desarrollador_net.jpg")
-                    .build();
-
-            listaDeVacantes.add(vacante1);
-            listaDeVacantes.add(vacante2);
-            listaDeVacantes.add(vacante3);
-            listaDeVacantes.add(vacante4);
+            listaDeVacantes.add(vacante);
 
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
     }
+
+    static {
+        crearVacante(
+                1,
+                "Desarrollador Java",
+                "Desarrolla aplicaciones web y aplicaciones móviles en Java",
+                "08-02-2019",
+                15000.0,
+                1,
+                "logo1.png"
+        );
+        crearVacante(
+                2,
+                "Desarrollador .NET",
+                "Desarrolla aplicaciones web y aplicaciones móviles en .NET",
+                "08-02-2019",
+                15000.0,
+                1,
+                "logo2.png"
+        );
+
+        crearVacante(
+                3,
+                "Desarrollador PHP",
+                "Desarrolla aplicaciones web y aplicaciones móviles en PHP",
+                "08-02-2019",
+                15000.0,
+                1,
+                "logo3.png"
+        );
+        crearVacante(
+                4,
+                "Desarrollador Ruby",
+                "Desarrolla aplicaciones web y aplicaciones móviles en Ruby",
+                "08-02-2019",
+                15000.0,
+                1,
+                "logo4.png"
+        );
+
+
+    }
+
+
 }
