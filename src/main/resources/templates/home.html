@@ -69,16 +69,16 @@
         <h2 class="font-weight-bold text-center text-capitalize">DESTACADOS</h2>
         <hr>
         <!-- Start card 1 -->
-        <div class="row" th:each="vacanteFactory : ${vacanteFactory}">
+        <div class="row" th:each="vacante : ${vacantes}">
           <div class="col-md-3">            
-            <img class="rounded mx-auto d-block" th:src="@{images/{img} (img=${vacante.vacanteFactory} )}" alt="Generic placeholder image" width="220" height="220">
+            <img class="rounded mx-auto d-block" th:src="@{images/{img} (img=${vacante.imagen} )}" alt="Generic placeholder image" width="220" height="220">
           </div>
           <div class="col-md-9">
-              <h2 th:text="${vacanteFactory.nombre}"></h2>
+              <h2 th:text="${vacante.nombre}"></h2>
               <h6 class="card-title"><strong>Categoría: </strong> <span ></span></h6>
-              <h6 class="card-title"><strong>Publicado: </strong> <span th:text="${vacanteFactory.fecha}">2023-01-01 </span></h6>
-              <p th:text="${vacanteFactory.descripcion}"> </p>
-              <td><a th:href="@{/vacantes/view/{id} (id=${vacanteFactory.id})}" class="btn btn-success">Ver Detalle</a>
+              <h6 class="card-title"><strong>Publicado: </strong> <span th:text="${vacante.fecha}">2023-01-01 </span></h6>
+              <p th:text="${vacante.descripcion}"> </p>
+              <td><a th:href="@{/vacantes/view/{id} (id=${vacante.id})}" class="btn btn-success">Ver Detalle</a>
               </td>
           </div>
         </div> 

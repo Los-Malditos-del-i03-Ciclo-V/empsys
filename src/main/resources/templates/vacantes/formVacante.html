@@ -27,7 +27,15 @@
         <div class="card">
           <h4 class="card-header"><strong>Datos de la oferta de trabajo</strong></h4>              
           <div class="card-body">
-            <form th:action=" @{/vacantes/save}" method="post">              
+            <form th:action=" @{/vacantes/save}" th:object="${vacante}" method="post" >
+
+              <div th:if="${#fields.hasErrors('*')}"class='alert alert-danger' role='alert'>
+                Por favor corrija los siguientes errores:
+                <ul>
+                  <li th:each="err : ${#fields.errors('*')}" th:text="${err}"/>
+                </ul>
+              </div>
+
               <div class="row">
                 <div class="col-md-3"> 
                   <div class="form-group">
@@ -126,10 +134,10 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>    
-    <script src="tinymce/tinymce.min.js"></script>
+	<script th:src="@{bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/tinymce/tinymce.min.js}"></script>
     <script>
-      
+
       $(function () {
           $("#fecha").datepicker({dateFormat: 'dd-mm-yy'});
         }

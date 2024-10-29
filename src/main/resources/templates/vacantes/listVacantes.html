@@ -17,6 +17,9 @@
 
 	<div style="width: 80%; margin: 72px auto">
 		<h1>Lista de Vacantes</h1>
+		<hr>
+		<div th:if="${mensaje != null}" class='alert alert-success' th:text="${mensaje}" role='alert'></div>
+
 		<table class="table table-bordered" style="margin-top: 32px;">
 			<thead class="table-dark">
 				<tr>

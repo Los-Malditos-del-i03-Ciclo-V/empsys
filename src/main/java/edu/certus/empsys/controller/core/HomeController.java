@@ -61,7 +61,7 @@ public class HomeController {
 
         List<Vacante> lista = vacanteService.obtenerTodasLasVacantes();
 
-        model.addAttribute("vacante", lista);
+        model.addAttribute("vacantes", lista);
 
         return "home";
     }
